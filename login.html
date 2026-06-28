@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — Mobile 2000</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%230b46e6'/><path fill='white' d='M13 4 6 13h4l-1 7 7-9h-4z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body data-page="account">
+  <div id="site-header"></div>
+  <main class="container">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h1 data-i18n="auth.welcome">Welcome back</h1>
+        <p class="muted" data-i18n="auth.login">Log in</p>
+        <form id="loginForm" style="margin-top:20px" novalidate>
+          <div class="field"><label data-i18n="auth.email">Email</label><input class="input" type="email" id="email" autocomplete="email"><div class="err" data-i18n="auth.badEmail"></div></div>
+          <div class="field"><label data-i18n="auth.password">Password</label><input class="input" type="password" id="password" autocomplete="current-password"><div class="err" data-i18n="auth.shortPass"></div></div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-i18n="auth.login">Log in</button>
+        </form>
+        <div class="card card-pad" style="margin-top:16px;background:var(--bg-soft);font-size:.85rem">
+          <b>Demo:</b> register a new account, then log in. Data is stored locally in your browser.
+        </div>
+        <p class="center muted" style="margin-top:18px"><span data-i18n="auth.noAccount">Don't have an account?</span>
+          <a href="register.html" style="color:var(--primary);font-weight:600" data-i18n="auth.register">Create account</a></p>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/recommend.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile 2000 — Premium Phones & Smart Recommendations</title>
+  <meta name="description" content="Shop premium smartphones, tablets and accessories in Kuwait. Compare phones, get smart recommendations, and find the perfect device with our AI phone finder." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%230b46e6'/><path fill='white' d='M13 4 6 13h4l-1 7 7-9h-4z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero slider -->
+    <section class="hero">
+      <div class="container"><div class="slider" id="heroSlider"></div></div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="section-sm">
+      <div class="container"><div class="trust-strip" id="trustStrip"></div></div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="home.categories">Shop by category</h2></div></div>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+    </section>
+
+    <!-- Today's deals -->
+    <section class="section">
+      <div class="container">
+        <div class="flash reveal" style="margin-bottom:24px">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.16);color:#fff" data-i18n="widget.deals">Today's deals</span>
+            <h2 data-i18n="home.flash.sub">Limited time offers — hurry!</h2>
+          </div>
+          <div class="countdown" id="countdown"></div>
+          <a href="products.html?deal=1" class="btn btn-light" data-i18n="cta.viewAll">View all</a>
+        </div>
+        <div id="dealsRail"></div>
+      </div>
+    </section>
+
+    <!-- Continue shopping (only if cart has items) -->
+    <section class="section-sm hidden" id="continueSection">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow"><span class="li" id="ic-continue"></span> <span data-i18n="widget.continue">Continue shopping</span></span></div></div>
+        <div class="mini-rail" id="continueStrip"></div>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow" data-i18n="home.featured">Featured</span><h2 data-i18n="home.featured">Featured phones</h2><p data-i18n="home.featured.sub"></p></div>
+          <a class="link" href="products.html">→ <span data-i18n="cta.viewAll">View all</span></a>
+        </div>
+        <div id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- Recommended for you -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="widget.recommended">Recommended for you</h2><p data-i18n="home.recommended.sub"></p></div>
+          <a class="link" href="products.html">→ <span data-i18n="cta.viewAll">View all</span></a></div>
+        <div class="rail" id="recoRail"></div>
+      </div>
+    </section>
+
+    <!-- Smart Finder banner -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="background:var(--grad-ink);border-radius:var(--radius-xl);padding:48px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;overflow:hidden;position:relative">
+          <div style="position:relative;z-index:2">
+            <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Smart Phone Finder</span>
+            <h2 style="font-size:clamp(1.5rem,1rem+2vw,2.4rem);margin:10px 0" data-i18n="home.finder.title">Not sure which phone to buy?</h2>
+            <p style="opacity:.9;max-width:560px;margin-bottom:22px" data-i18n="home.finder.sub"></p>
+            <a href="finder.html" class="btn btn-light btn-lg" data-i18n="cta.findPhone">Find my phone</a>
+          </div>
+          <div style="font-size:9rem;color:rgba(255,255,255,.9);position:relative;z-index:2" class="hide-sm li" id="finderArt"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best sellers -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow"><span class="li" id="ic-best"></span> <span data-i18n="home.bestsellers">Best sellers</span></span><h2 data-i18n="home.bestsellers">Best sellers</h2><p data-i18n="home.bestsellers.sub"></p></div>
+          <a class="link" href="products.html?sort=popular">→ <span data-i18n="cta.viewAll">View all</span></a>
+        </div>
+        <div id="bestGrid"></div>
+      </div>
+    </section>
+
+    <!-- Top rated -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="widget.topRated">Top rated</h2></div>
+          <a class="link" href="products.html?sort=rating">→ <span data-i18n="cta.viewAll">View all</span></a></div>
+        <div class="rail" id="topRatedRail"></div>
+      </div>
+    </section>
+
+    <!-- Trending this week -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow"><span class="li" id="ic-trend"></span> <span data-i18n="widget.trending">Trending this week</span></span><h2 data-i18n="widget.trending">Trending this week</h2></div></div>
+        <div class="rail" id="trendingRail"></div>
+      </div>
+    </section>
+
+    <!-- New arrivals -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow" data-i18n="home.new">New arrivals</span><h2 data-i18n="home.new">New arrivals</h2><p data-i18n="home.new.sub"></p></div>
+          <a class="link" href="products.html?sort=newest">→ <span data-i18n="cta.viewAll">View all</span></a>
+        </div>
+        <div id="newGrid"></div>
+      </div>
+    </section>
+
+    <!-- Recently viewed (only if any) -->
+    <section class="section hidden" id="recentSection">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="widget.recentlyViewed">Recently viewed</h2></div></div>
+        <div class="rail" id="recentRail"></div>
+      </div>
+    </section>
+
+    <!-- Accessory bundles -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="widget.bundles">Accessory bundles</h2></div></div>
+        <div class="bundle" id="bundleGrid"></div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><h2 data-i18n="home.brands">Top brands</h2></div></div>
+        <div class="brand-grid" id="brandGrid"></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">★ 4.8 / 5</span><h2 data-i18n="home.reviews">What customers say</h2></div></div>
+        <div class="review-grid" id="reviewGrid"></div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter reveal">
+          <h2 data-i18n="news.title">Stay in the loop</h2>
+          <p style="opacity:.9" data-i18n="news.sub"></p>
+          <form id="newsForm">
+            <input type="email" required data-i18n-ph="news.placeholder" aria-label="Email" />
+            <button class="btn btn-light" type="submit" data-i18n="news.btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/recommend.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
